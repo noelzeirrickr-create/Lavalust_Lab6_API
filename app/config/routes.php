@@ -160,3 +160,19 @@ $router->options(
     '/api/products/{id}',
     'ApiController::login'
 )->where_number('id');
+
+
+// =====================================================
+// CORS PREFLIGHT ROUTES
+// =====================================================
+
+$router->options('/api/login', 'ApiController::login');
+$router->options('/api/refresh', 'ApiController::refresh');
+$router->options('/api/logout', 'ApiController::logout');
+
+$router->options('/api/products', 'ApiController::products');
+
+$router->options(
+    '/api/products/{id}',
+    'ApiController::update_product'
+)->where_number('id');
