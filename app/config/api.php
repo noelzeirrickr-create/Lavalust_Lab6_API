@@ -102,12 +102,10 @@ $frontend_origins = getenv('FRONTEND_ORIGIN');
 if (!empty($frontend_origins)) {
     $config['allow_origin'] = array_values(array_filter(array_map('trim', explode(',', $frontend_origins))));
 } else {
-    $config['allow_origin'] = [
-        'http://localhost:5173',
-        'http://localhost:5174',
-        'http://127.0.0.1:5173',
-        'http://127.0.0.1:5174',
-    ];
+   $config['allow_origin'] = [
+    'https://productmanagement-pied.vercel.app',
+    'https://productmanagement-git-main-zei4.vercel.app',
+];
 }
 
 /*
